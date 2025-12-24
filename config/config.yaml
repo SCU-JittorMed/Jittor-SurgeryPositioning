@@ -1,0 +1,41 @@
+ipc:
+  tcp_socket:
+    port: 8081
+  shared_memory:
+    buffer_size: 4096
+    file_name: "apriltag_pose_data.tmp"
+
+camera:
+  rgb:
+    width: 1280
+    height: 720
+    fps: 30
+    matrix:
+      - [646.71386719, 0.0, 645.97967529]
+      - [0.0, 645.81292725, 373.04150391]
+      - [0.0, 0.0, 1.0]
+    dist_coeffs: [-0.05683016777038574, 0.0678257942199707, 0.00020736592705361545, 0.0006015175022184849, -0.022939417511224747]
+  depth:
+    width: 1280
+    height: 720
+    fps: 30
+    matrix:
+      - [653.67602539, 0.0, 642.39532471]
+      - [0.0, 653.67602539, 365.88021851]
+      - [0.0, 0.0, 1.0]
+    dist_coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+apriltag:
+  families: "tag36h11"
+  size: 0.043
+  quad_decimate: 1.0
+  quad_sigma: 0.0
+  refine_edges: true
+  decode_sharpening: 0.25
+
+cube:
+  size: 0.057
+
+logging:
+  file: "server.log"
+  level: "INFO"
